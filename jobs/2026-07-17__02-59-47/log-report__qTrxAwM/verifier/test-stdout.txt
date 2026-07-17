@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.6, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 2 items
+
+../tests/test_outputs.py FF                                              [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_report_has_exact_schema _________________________
+
+    def test_report_has_exact_schema():
+>       report = load_report()
+                 ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.is_file(), (
+            "Expected the report at /app/report.json"
+        )
+E       AssertionError: Expected the report at /app/report.json
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/app/report.json').is_file
+
+/tests/test_outputs.py:61: AssertionError
+_____________________ test_report_values_match_access_log ______________________
+
+    def test_report_values_match_access_log():
+>       report = load_report()
+                 ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.is_file(), (
+            "Expected the report at /app/report.json"
+        )
+E       AssertionError: Expected the report at /app/report.json
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/app/report.json').is_file
+
+/tests/test_outputs.py:61: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_report_has_exact_schema - AssertionErro...
+FAILED ../tests/test_outputs.py::test_report_values_match_access_log - Assert...
+============================== 2 failed in 0.02s ===============================
